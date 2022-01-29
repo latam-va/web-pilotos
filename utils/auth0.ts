@@ -3,7 +3,7 @@ import { initAuth0 } from "@auth0/nextjs-auth0";
 export default initAuth0({
   secret: process.env.SESSION_COOKIE_SECRET,
   issuerBaseURL: process.env.NEXT_PUBLIC_AUTH0_DOMAIN,
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  baseURL: "https://pilotos.latamva.com.ar",
   clientID: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID,
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   routes: {
