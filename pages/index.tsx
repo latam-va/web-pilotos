@@ -8,14 +8,18 @@ import auth0 from "../utils/auth0";
 import { json } from "stream/consumers";
 
 const Home: NextPage = ({ user }: any) => {
-  return <SidebarLayout user={user}>
-    <p className="ml-24">{JSON.stringify(user)}</p>
-  </SidebarLayout>
+  return (
+    <>
+      <Sidebar user={user} />
+      {user && (
+        <p className="flex ml-24">{JSON.stringify(user)}</p>
+      )}
+    </>
+  );
 };
 
 export async function getServerSideProps(context: any) {
-
-  const session = await auth0.getSession(context.req, context.res)
+  const session = await auth0.getSession(context.req, context.res);
 
   return {
     props: {
