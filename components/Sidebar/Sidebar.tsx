@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillHome } from "react-icons/ai";
 import { TiWeatherCloudy } from "react-icons/ti";
 import { GiPlanePilot } from "react-icons/gi";
 import { FaRegPaperPlane, FaToolbox } from "react-icons/fa";
@@ -12,6 +13,11 @@ const Sidebar = ({ user }: any) => {
     <div className="fixed top-0 left-0 h-screen w-20 m-0 flex flex-col bg-gray-900 text-white shadow-lg">
       {user ? (
         <>
+          <SidebarIcon
+            icon={<AiFillHome size={"28"} />}
+            text="Inicio"
+            link="/"
+          />
           <SidebarIcon
             icon={<TiWeatherCloudy size={"28"} />}
             text="Reportes meteorologicos"
