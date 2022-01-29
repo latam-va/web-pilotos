@@ -8,7 +8,7 @@ export default initAuth0({
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   routes: {
     callback:
-      "https://pilotos.latamva.com.ar/api/callback",
+      "/api/callback",
     postLogoutRedirect:
       "https://pilotos.latamva.com.ar",
   },
