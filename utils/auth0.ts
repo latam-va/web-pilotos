@@ -8,11 +8,9 @@ export default initAuth0({
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   routes: {
     callback:
-      process.env.NEXT_PUBLIC_REDIRECT_URI ||
-      "http://localhost:3000/api/callback",
+      "https://pilotos.latamva.com.ar/api/callback",
     postLogoutRedirect:
-      process.env.NEXT_PUBLIC_POST_LOGOUT_REDIRECT_URI ||
-      "http://localhost:3000",
+      "https://pilotos.latamva.com.ar",
   },
   authorizationParams: {
     response_type: "code",
