@@ -1,22 +1,17 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Sidebar from "../components/Sidebar/Sidebar";
-import SidebarLayout from "../Layouts/SidebarLayout";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
-import auth0 from "../utils/auth0";
-import axios from "axios";
+import { NextPage } from "next";
+import React from "react";
 import LoginComponent from "../components/Login/LoginComponent";
-import IndexComponent from "../components/Index/IndexComponent";
-import SocialMedia from "../components/Index/SocialMedia";
+import Sidebar from "../components/Sidebar/Sidebar";
+import WeatherComponent from "../components/WX/WeatherComponent";
+import { User } from "../types/IUser";
 
-const Home: NextPage = ({ user }: any) => {
+const WeatherPage: NextPage = ({ user }: any) => {
   if (user) {
     return (
       <>
         <Sidebar user={user} />
-        <div className="overflow-hidden flex flex-col">
-          <IndexComponent user={user} />
+        <div className="flex overflow-hidden">
+          <WeatherComponent />
         </div>
       </>
     );
@@ -27,12 +22,12 @@ const Home: NextPage = ({ user }: any) => {
 
 export async function getServerSideProps(context: any) {
   /* const session = await auth0.getSession(context.req, context.res);
-
-  return {
-    props: {
-      user: session?.user || null,
-    },
-  }; */
+  
+    return {
+      props: {
+        user: session?.user || null,
+      },
+    }; */
 
   return {
     props: {
@@ -51,4 +46,4 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-export default Home;
+export default WeatherPage;

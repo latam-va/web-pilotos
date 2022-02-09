@@ -20,6 +20,12 @@ module.exports = {
           200: '#ebedef',
           100: '#f2f3f5'
         }
+      },
+      fontFamily: {
+        montseratCustom: ["Montserrat", "sans-serif"],
+      },
+      backgroundImage: {
+        'index-blurry': "url('/portada.png')"
       }
     },
   },

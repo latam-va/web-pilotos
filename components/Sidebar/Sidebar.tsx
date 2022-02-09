@@ -31,18 +31,18 @@ const Sidebar = ({ user }: any) => {
           <SidebarIcon
             icon={<FaRegPaperPlane size={"28"} />}
             text="Crear plan de vuelo"
-            link="/fpl"
+            link="/api/flightplan"
           />
           <SidebarIcon
             icon={<BsFillPencilFill size={"28"} />}
             text="Reportar Vuelo"
             link="/pirep"
           />
-          <SidebarIcon
+          {/* <SidebarIcon
             icon={<FaToolbox size={"28"} />}
             text="Acceso administrador"
             link="/admin"
-          />
+          /> */}
           <SidebarIcon
             icon={<FiLogOut size={"28"} />}
             text="Cerrar Sesion"
