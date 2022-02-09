@@ -4,6 +4,7 @@ import LoginComponent from "../components/Login/LoginComponent";
 import Sidebar from "../components/Sidebar/Sidebar";
 import WeatherComponent from "../components/WX/WeatherComponent";
 import { User } from "../types/IUser";
+import auth0 from "../utils/auth0";
 
 const WeatherPage: NextPage = ({ user }: any) => {
   if (user) {
@@ -21,15 +22,15 @@ const WeatherPage: NextPage = ({ user }: any) => {
 };
 
 export async function getServerSideProps(context: any) {
-  /* const session = await auth0.getSession(context.req, context.res);
-  
-    return {
-      props: {
-        user: session?.user || null,
-      },
-    }; */
+  const session = await auth0.getSession(context.req, context.res);
 
   return {
+    props: {
+      user: session?.user || null,
+    },
+  };
+
+  /* return {
     props: {
       user: {
         given_name: "Francisco",
@@ -43,7 +44,7 @@ export async function getServerSideProps(context: any) {
         sub: "google-oauth2|116297160630353303637",
       },
     },
-  };
+  }; */
 }
 
 export default WeatherPage;

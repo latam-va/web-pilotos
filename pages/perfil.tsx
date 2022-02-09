@@ -29,13 +29,13 @@ const Profile: NextPage = ({ user, dbUser }: any) => {
 export async function getServerSideProps(context: any) {
   const session: any = await auth0.getSession(context.req, context.res);
 
-  /* return {
+  return {
     props: {
       user: session?.user || null,
     },
-  }; */
+  };
 
-  return {
+  /* return {
     props: {
       user: {
         given_name: "Francisco",
@@ -49,7 +49,7 @@ export async function getServerSideProps(context: any) {
         sub: "google-oauth2|116297160630353303637",
       },
     },
-  };
+  }; */
 }
 
 export default Profile;
